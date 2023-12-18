@@ -1,0 +1,85 @@
+﻿<style>
+    html {
+        font-size: 16px;
+    }
+    .layout {
+        padding: 16px;
+        display: flex;
+        flex-flow: column;
+    }
+    .label {
+        font-weight: 600;
+    }
+    .contractor {
+        display: flex;
+        flex-flow: column;
+    }
+    .heading {
+        font-weight: 600;
+    }
+    .contractor, subscriber {
+        display: flex;
+        flex-flow: column;
+    }
+    .items {
+        width: 100%;
+    }
+</style>
+<html>
+    <body class="layout">
+        <div>
+            <span>{invoiceType}: {invoiceId}</span>
+        </div>
+        <div class="header">
+            <div className="contractor">
+                <div className="heading">Dodavatel</div>
+                <div>Jméno: {contractor_name}</div>
+                <div>Ulice: {contractor_street}</div>
+                <div>Číslo domu: {contractor_house_number}</div>
+                <div>Město: {contractor_city}</div>
+                <div>Stát: {contractor_country}</div>
+                <div>PSC: {contractor_psc}</div>
+                <div>ICO: {contractor_ico}</div>
+                <div>DIC: {contractor_dic}</div>
+            </div>
+            <div className="subscriber">
+                <div className="heading">Odběratel</div>
+                <div>Jméno: {subscriber_name}</div>
+                <div>Ulice: {subscriber_street}</div>
+                <div>Číslo domu: {subscriber_house_number}</div>
+                <div>Město: {subscriber_city}</div>
+                <div>Stát: {subscriber_country}</div>
+                <div>PSC: {subscriber_psc}</div>
+                <div>ICO: {subscriber_ico}</div>
+                <div>DIC: {subscriber_dic}</div>
+            </div>
+        </div>
+        <div class="dates">
+            <span>Datum vystavení: {issueDate}</span>
+            <span>Datum splatnosti: {dueDate}</span>
+            <span>Číslo učtu: {bankNumber}</span>
+            <span>IBAN: {swift}</span>
+            <span>SWIFT: {iban}</span>
+        </div>
+        <table class="items">
+            <tr>
+                <th>Název</th>
+                <th>Počet</th>
+                <th>Cena za jeden</th>
+                <th>DPH %</th>
+                <th>Bez DPH</th>
+                <th>DPH</th>
+                <th>Celkem</th>
+            </tr>
+            <tr>
+                <td align="center">{itemName}</td>
+                <td align="center">{itemCount}</td>
+                <td align="center">{itemPriceForOne}</td>
+                <td align="center">{itemVAT}%</td>
+                <td align="center">{itemPriceNoVat}</td>
+                <td align="center">{itemAmountVat}</td>
+                <td align="center">{itemPrice}</td>
+            </tr>
+        </table>
+    </body>
+</html>
